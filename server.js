@@ -85,7 +85,7 @@ async function  handleEvent(event){
   }
   return client.pushMessage(event.source.userId, {
     type: 'text',
-    text: "ユーザー登録 : アカウントの登録するよー isbnコードを入力 : 所持している本の登録を行います",
+    text: "ユーザー登録 : アカウントの登録するよー \n isbnコードを入力 : 所持している技術書を登録するよー",
 });
 }
 
