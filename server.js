@@ -3,7 +3,6 @@ const env = require('dotenv').config();
 const express = require('express');
 const line = require('@line/bot-sdk');
 const axios = require('axios');
-const res = require('express/lib/response');
 const PORT = process.env.PORT || 3000;
 
 const config = {
@@ -15,9 +14,6 @@ const app = express();
 
 app.get('/', (req, res) => res.send('Hello LINE BOT!(GET)')); 
 app.post('/webhook', line.middleware(config), (req, res) => {
-  // console.log(req.body)
-  // console.log(req.body.events);
-
   Promise
     .all(req.body.events.map(handleEvent))
     .then((result) => res.json(result));
