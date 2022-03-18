@@ -53,9 +53,9 @@ const handleEvent = async ( event )=> {
   const ISBN_BASE = "https://api.openbd.jp/v1/get?isbn="
   const ISBN_QUERY = event.message.text
   const isbnRes = await axios.get(ISBN_BASE+ISBN_QUERY)
-    .then(res =>{
+    .then(res => {
       return res.data
-    }).catch(err => {
+    }).catch(() => {
       return [null]
     })
     
